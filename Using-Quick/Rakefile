@@ -1,0 +1,53 @@
+require "rubygems/version"
+require 'date'
+
+PROJECT_NAME = 'Using-Quick'
+HOMEBREW_ROOT = '/usr/local/opt' # TODO: 環境からパスをもらう
+REQUIRED_BREW_PACKAGES = [] #homebrewでインストールするパッケージのリスト
+
+#nowrite true #debug
+
+task :default => :setup
+
+desc 'alias to "project:setup, project:open" (use as default)'
+task :setup => ['project:setup', 'project:open']
+
+#=======================
+#project setting
+#=======================
+
+namespace :project do
+
+  desc "set up '#{PROJECT_NAME}' on your env."
+  task :setup => ['brew:install','bundle:install','pod:install']
+
+  task :open do
+    sh 'open', "#{PROJECT_NAME}.xcworkspace"
+  end
+
+  namespace :brew do
+    path_list = REQUIRED_BREW_PACKAGES.map { |sym| File.join( HOMEBREW_ROOT,sym.to_s )  }
+
+    desc 'install brew packages on your env.'
+    task :install => path_list
+    path_list.each do |path|
+      file path do
+        sh 'brew','install',"#{File.basename path}"
+      end
+    end
+  end
+
+  namespace :bundle do
+    task :install => ['Gemfile','vendor/bundle']
+    file 'Gemfile'
+    file 'vendor/bundle' do
+      sh 'bundle','install','--path','vendor/bundle','-j4'
+    end
+  end
+
+  namespace :pod do
+    task :install => 'bundle:install' do
+      sh 'bundle','exec','pod','install'
+    end
+  end
+end

@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		1A6F71A88247C1DA549062C9 /* libPods-Using-Quick.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC151C29A1B25DA113E821A5 /* libPods-Using-Quick.a */; };
 		27E89BE761CCA961161377B0 /* Pods_Using_QuickTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E26AE91DCE21F4FDC923B0C /* Pods_Using_QuickTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		7857D3A61B11940800B16AE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7857D3A51B11940800B16AE7 /* main.m */; };
 		7857D3AF1B11940800B16AE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7857D3AD1B11940800B16AE7 /* Main.storyboard */; };
 		7857D3B11B11940800B16AE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7857D3B01B11940800B16AE7 /* Images.xcassets */; };
 		7857D3B41B11940800B16AE7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7857D3B21B11940800B16AE7 /* LaunchScreen.xib */; };
 		7857D3C01B11940800B16AE7 /* Using_QuickTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7857D3BF1B11940800B16AE7 /* Using_QuickTests.m */; };
 		7857D3D11B1195A600B16AE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7857D3CB1B1195A600B16AE7 /* AppDelegate.m */; };
-		7857D3D21B1195A600B16AE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7857D3CD1B1195A600B16AE7 /* main.m */; };
 		7857D3D31B1195A600B16AE7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7857D3D01B1195A600B16AE7 /* ViewController.m */; };
+		7868E60B1B11AF10001E3CE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7868E60A1B11AF10001E3CE6 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +32,6 @@
 		57F63384FCA9B268DDBE0F6C /* Pods-Using-QuickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Using-QuickTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Using-QuickTests/Pods-Using-QuickTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7857D3A01B11940800B16AE7 /* Using-Quick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Using-Quick.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7857D3A41B11940800B16AE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7857D3A51B11940800B16AE7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7857D3AE1B11940800B16AE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7857D3B01B11940800B16AE7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7857D3B31B11940800B16AE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -42,9 +40,9 @@
 		7857D3BF1B11940800B16AE7 /* Using_QuickTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Using_QuickTests.m; sourceTree = "<group>"; };
 		7857D3CA1B1195A600B16AE7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7857D3CB1B1195A600B16AE7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7857D3CD1B1195A600B16AE7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7857D3CF1B1195A600B16AE7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7857D3D01B1195A600B16AE7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7868E60A1B11AF10001E3CE6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = main/main.m; sourceTree = "<group>"; };
 		9E26AE91DCE21F4FDC923B0C /* Pods_Using_QuickTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Using_QuickTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD4025D61341156230A8979 /* Pods-Using-Quick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Using-Quick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Using-Quick/Pods-Using-Quick.debug.xcconfig"; sourceTree = "<group>"; };
 		C26A6C992E373D795956648E /* Pods-Using-QuickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Using-QuickTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Using-QuickTests/Pods-Using-QuickTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				7857D3A41B11940800B16AE7 /* Info.plist */,
-				7857D3A51B11940800B16AE7 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -149,6 +146,7 @@
 				7857D3CA1B1195A600B16AE7 /* AppDelegate.h */,
 				7857D3CB1B1195A600B16AE7 /* AppDelegate.m */,
 				7857D3CC1B1195A600B16AE7 /* main */,
+				7868E60A1B11AF10001E3CE6 /* main.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -156,7 +154,6 @@
 		7857D3CC1B1195A600B16AE7 /* main */ = {
 			isa = PBXGroup;
 			children = (
-				7857D3CD1B1195A600B16AE7 /* main.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -370,9 +367,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7857D3D11B1195A600B16AE7 /* AppDelegate.m in Sources */,
-				7857D3D21B1195A600B16AE7 /* main.m in Sources */,
 				7857D3D31B1195A600B16AE7 /* ViewController.m in Sources */,
-				7857D3A61B11940800B16AE7 /* main.m in Sources */,
+				7868E60B1B11AF10001E3CE6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

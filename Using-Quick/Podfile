@@ -1,0 +1,12 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '8.3'
+
+target 'Using-Quick' do
+  pod 'AFNetworking'
+end
+
+target 'Using-QuickTests' do
+  use_frameworks!
+  pod 'Quick'
+  pod 'Nimble'
+end

@@ -1,4 +1,4 @@
-/Users/bko/.rbenv/versions/2.2.2/bin/ruby -r ./siteconf20150524-67074-1kn7i7k.rb extconf.rb
+/Users/bko/.rbenv/versions/2.2.1/bin/ruby -r ./siteconf20150524-72538-mt9k5a.rb extconf.rb
 creating Makefile
 
 make "DESTDIR=" clean

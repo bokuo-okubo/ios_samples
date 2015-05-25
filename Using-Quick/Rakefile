@@ -3,14 +3,17 @@ require 'date'
 
 PROJECT_NAME = 'Using-Quick'
 HOMEBREW_ROOT = '/usr/local/opt' # TODO: 環境からパスをもらう
-REQUIRED_BREW_PACKAGES = [] #homebrewでインストールするパッケージのリスト
-
-#nowrite true #debug
+WIKI_REPO = 'https://github.com/bokuo-okubo/ios_samples.wiki.git'
+DOXYGEN_CONF = './doxygen.conf' #doxygenの設定file
+REQUIRED_BREW_PACKAGES = [:doxygen] #homebrewでインストールするパッケージのリスト
 
 task :default => :setup
 
 desc 'alias to "project:setup, project:open" (use as default)'
 task :setup => ['project:setup', 'project:open']
+
+desc 'alias to "docs:generate, docs:open"'
+task :docs => ['docs:generate', 'docs:open']
 
 #=======================
 #project setting
@@ -25,18 +28,6 @@ namespace :project do
     sh 'open', "#{PROJECT_NAME}.xcworkspace"
   end
 
-  namespace :brew do
-    path_list = REQUIRED_BREW_PACKAGES.map { |sym| File.join( HOMEBREW_ROOT,sym.to_s )  }
-
-    desc 'install brew packages on your env.'
-    task :install => path_list
-    path_list.each do |path|
-      file path do
-        sh 'brew','install',"#{File.basename path}"
-      end
-    end
-  end
-
   namespace :bundle do
     task :install => ['Gemfile','vendor/bundle']
     file 'Gemfile'
@@ -48,6 +39,76 @@ namespace :project do
   namespace :pod do
     task :install => 'bundle:install' do
       sh 'bundle','exec','pod','install'
+    end
+  end
+
+  namespace :brew do
+    path_list = REQUIRED_BREW_PACKAGES.map { |sym| File.join( HOMEBREW_ROOT,sym.to_s )  }
+
+    desc 'install brew packages on your env.'
+    task :install => path_list
+    path_list.each do |path|
+      file path do
+        sh 'brew','install',"#{File.basename path}"
+      end
+    end
+  end
+end
+
+#=======================
+#document setting
+#=======================
+
+namespace :docs do
+
+  desc 'initalize doxygenconf'
+  task :init do
+    sh 'doxygen','-g','doxygen.conf'
+  end
+
+  desc 'generate documents'
+  task :generate => 'project:brew:install' do
+    sh 'doxygen', DOXYGEN_CONF
+  end
+
+  desc 'open documents'
+  task :open do
+    sh 'open', 'html/index.html'
+  end
+
+  desc 'push document logs to repository'
+  task :push => 'git:push_wiki'
+
+  namespace :git do
+    now = DateTime.now.strftime("%Y%m%d_%H%M")
+
+    task :clone_wiki => './wiki'
+    file './wiki' do
+      sh 'git','clone',WIKI_REPO
+    end
+
+    task :pull_wiki => :clone_wiki do
+      cd './wiki'
+      sh 'git','pull','origin','master'
+      cd '../'
+    end
+
+    task :copy_docs => :pull_wiki do
+      sh 'mkdir',"./wiki/#{now}/"
+      sh 'cp','-rf','./html' , "./wiki/#{now}/html"
+    end
+
+    task :commit_wiki => :copy_docs do
+      cd './wiki'
+      sh 'git','add','--all'
+      sh 'git','commit','-m',now
+      cd '../'
+    end
+
+    task :push_wiki => :commit_wiki do
+      cd './wiki'
+      sh 'git','push','origin','master'
+      cd '../'
     end
   end
 end

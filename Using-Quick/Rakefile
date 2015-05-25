@@ -82,6 +82,7 @@ namespace :docs do
   namespace :git do
     now = DateTime.now.strftime("%Y%m%d_%H%M")
 
+    directory './wiki'
     task :clone_wiki => './wiki'
     file './wiki' do
       sh 'git','clone',WIKI_REPO

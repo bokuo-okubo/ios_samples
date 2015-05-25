@@ -3,7 +3,7 @@ require 'date'
 
 PROJECT_NAME = 'Using-Quick'
 HOMEBREW_ROOT = '/usr/local/opt' # TODO: 環境からパスをもらう
-WIKI_REPO = 'https://github.com/bokuo-okubo/ios_samples.wiki.git'
+WIKI_REPO = 'git@github.com:bokuo-okubo/docs.git'
 DOXYGEN_CONF = './doxygen.conf' #doxygenの設定file
 REQUIRED_BREW_PACKAGES = [:doxygen] #homebrewでインストールするパッケージのリスト
 
